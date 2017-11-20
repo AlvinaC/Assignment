@@ -50,6 +50,7 @@ public class ActivityScenario1 extends BaseActivity implements View.OnClickListe
     private Toolbar toolbar;
     private String[] sliding_menu_items;
 
+    //Enum
     public enum Colors {
         RED,
         BLUE,
