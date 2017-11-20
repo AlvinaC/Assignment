@@ -39,6 +39,7 @@ public class Activity_Scenario1 extends BaseActivity implements View.OnClickList
     private LinearLayout ll_buttons;
     private Button btn_red, btn_blue, btn_green;
 
+
     public enum Colors {
         RED,
         BLUE,
