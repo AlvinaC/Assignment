@@ -6,7 +6,7 @@ Scenario 1
 
 ![ScreenShot](https://raw.githubusercontent.com/AlvinaC/Assignment/screenshot/screenshot_scenario1.png)
 
-Point 1: Mark five items with the same width to scroll horizontally
+Point 1: Mark five items with the same width to scroll horizontally<\n>
 Point 2: Make a viewpager of four fragments. Each fragment should be clickable and should display Fragment Number in Toast
 Point 3: Display three Textviews in alignment as shown in the screenshot
 Point 4: From Point 1, click any item out of 5 and that item name should be populated in point 4 as Textview
