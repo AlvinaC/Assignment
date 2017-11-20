@@ -14,15 +14,14 @@
         android:layout_marginLeft="18dp"
         android:orientation="horizontal">
 
-        <com.assignment.custom_components.TextViewPlus
+        <TextView
             android:id="@+id/row_title"
             style="@style/sliding_menu_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:gravity="center_vertical"
-            android:text="Medium Text"
-            foo:customFont="arial.ttf" />
+            android:text="Medium Text" />
     </LinearLayout>
 
     <View

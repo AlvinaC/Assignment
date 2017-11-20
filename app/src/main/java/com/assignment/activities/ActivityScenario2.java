@@ -3,7 +3,6 @@ package com.assignment.activities;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,10 +19,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.assignment.BaseActivity;
-import com.assignment.Network.VolleyErrorHelper;
-import com.assignment.Network.VolleyHelper;
 import com.assignment.R;
 import com.assignment.models.Location;
+import com.assignment.network.VolleyErrorHelper;
+import com.assignment.network.VolleyHelper;
 import com.assignment.util.Alerts;
 import com.assignment.util.CommonMethods;
 import com.assignment.util.Constants;
@@ -36,7 +35,7 @@ import java.util.ArrayList;
 /**
  * Summary: Scenario 2
  */
-public class Activity_Scenario2 extends BaseActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
+public class ActivityScenario2 extends BaseActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
     private static final String TAG = "Activity_Scenario2";
 
     private Spinner spinner;
@@ -152,7 +151,7 @@ public class Activity_Scenario2 extends BaseActivity implements AdapterView.OnIt
                             e.printStackTrace();
                         }
 
-                        Alerts.getInstance().dismiss(Activity_Scenario2.this, pDialog);
+                        Alerts.getInstance().dismiss(ActivityScenario2.this, pDialog);
 
 
                     }
@@ -160,9 +159,9 @@ public class Activity_Scenario2 extends BaseActivity implements AdapterView.OnIt
 
             @Override
             public void onErrorResponse(VolleyError error) {
-                Alerts.getInstance().dismiss(Activity_Scenario2.this, pDialog);
-                Alerts.getInstance().showDialogOnResponseError(Activity_Scenario2.this);
-                String errorString = VolleyErrorHelper.getMessage(error, Activity_Scenario2.this);
+                Alerts.getInstance().dismiss(ActivityScenario2.this, pDialog);
+                Alerts.getInstance().showDialogOnResponseError(ActivityScenario2.this);
+                String errorString = VolleyErrorHelper.getMessage(error, ActivityScenario2.this);
                 if (errorString != null) {
                     Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
                 }
@@ -179,8 +178,6 @@ public class Activity_Scenario2 extends BaseActivity implements AdapterView.OnIt
 
             public View getView(int position, View convertView, ViewGroup parent) {
                 View v = super.getView(position, convertView, parent);
-                Typeface externalFont = Typeface.createFromAsset(getAssets(), "arial.ttf");
-                ((TextView) v).setTypeface(externalFont);
                 ((TextView) v).setTextColor(getResources().getColor(R.color.intro_page_indicator_dark));
                 return v;
             }
@@ -188,8 +185,6 @@ public class Activity_Scenario2 extends BaseActivity implements AdapterView.OnIt
 
             public View getDropDownView(int position, View convertView, ViewGroup parent) {
                 View v = super.getDropDownView(position, convertView, parent);
-                Typeface externalFont = Typeface.createFromAsset(getAssets(), "arial.ttf");
-                ((TextView) v).setTypeface(externalFont);
                 ((TextView) v).setTextColor(getResources().getColor(R.color.intro_page_indicator_dark));
                 return v;
             }
@@ -263,6 +258,6 @@ public class Activity_Scenario2 extends BaseActivity implements AdapterView.OnIt
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Alerts.getInstance().dismiss(Activity_Scenario2.this, pDialog);
+        Alerts.getInstance().dismiss(ActivityScenario2.this, pDialog);
     }
 }

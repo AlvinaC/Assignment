@@ -3,14 +3,10 @@ package com.assignment.util;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.graphics.Color;
+import android.content.res.ColorStateList;
 import android.graphics.PorterDuff;
-import android.graphics.Typeface;
+import android.os.Build;
 import android.support.v7.app.AlertDialog;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.style.ForegroundColorSpan;
-import android.text.style.RelativeSizeSpan;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -39,20 +35,19 @@ public class Alerts {
 
     //show progressdialog in the app
     public void showDialog(final Context context, final ProgressDialog dialog, String message) {
-        SpannableString ss = new SpannableString(message);
-        final ForegroundColorSpan fcs = new ForegroundColorSpan(Color.rgb(67, 0, 108));
-        Typeface typeFace = Typeface.createFromAsset(context.getAssets(), "arial.ttf");
-        ss.setSpan(new RelativeSizeSpan(1.0f), 0, ss.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        ss.setSpan(new CustomTypefaceSpan("", typeFace), 0, ss.length(), 0);
-        dialog.setMessage(ss);
+        dialog.setMessage(message);
         dialog.setCancelable(false);
         dialog.setCanceledOnTouchOutside(false);
         dialog.setOnShowListener(new DialogInterface.OnShowListener() {
             @Override
             public void onShow(DialogInterface mdialog) {
                 ProgressBar v = (ProgressBar) dialog.findViewById(android.R.id.progress);
-                v.getIndeterminateDrawable().setColorFilter(context.getResources().getColor(R.color.intro_page_indicator_dark),
-                        PorterDuff.Mode.SRC_IN);
+                //PorterDuff.Mode.SRC_IN,  equates to drawing the source image/color inside the target image
+                if (Build.VERSION.SDK_INT >= 21) {
+                    v.setProgressTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.intro_page_indicator_dark)));
+                } else
+                    v.getIndeterminateDrawable().setColorFilter(context.getResources().getColor(R.color.intro_page_indicator_dark),
+                            PorterDuff.Mode.SRC_IN);
 
             }
         });
@@ -96,12 +91,8 @@ public class Alerts {
 
 
     public static void showDialogOK(final Context context, String message, DialogInterface.OnClickListener okListener) {
-        SpannableString ss = new SpannableString(message);
-        Typeface typeFace = Typeface.createFromAsset(context.getAssets(), "arial.ttf");
-        ss.setSpan(new RelativeSizeSpan(1.0f), 0, ss.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        ss.setSpan(new CustomTypefaceSpan("", typeFace), 0, ss.length(), 0);
         AlertDialog.Builder builder = new AlertDialog.Builder(context)
-                .setMessage(ss)
+                .setMessage(message)
                 .setPositiveButton("OK", okListener);
         final AlertDialog dialog = builder.create();
         dialog.setCancelable(false);

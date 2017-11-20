@@ -23,36 +23,33 @@
             android:layout_height="wrap_content"
             android:prompt="@string/spinner_title" />
 
-        <com.assignment.custom_components.TextViewPlus
+        <TextView
             style="@style/sliding_menu_item"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:gravity="left"
-            android:text="@string/mode"
-            foo:customFont="arial.ttf" />
+            android:text="@string/mode" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <com.assignment.custom_components.TextViewPlus
+            <TextView
                 android:id="@+id/txt_by_car"
                 style="@style/sliding_menu_item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="left"
-                android:text="@string/txt_by_car"
-                foo:customFont="arial.ttf" />
+                android:text="@string/txt_by_car" />
 
-            <com.assignment.custom_components.TextViewPlus
+            <TextView
                 android:id="@+id/txt_by_car_val"
                 style="@style/sliding_menu_item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="left"
-                foo:customFont="arial.ttf" />
+                android:gravity="left" />
         </LinearLayout>
 
         <LinearLayout
@@ -60,33 +57,30 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <com.assignment.custom_components.TextViewPlus
+            <TextView
                 android:id="@+id/txt_by_train"
                 style="@style/sliding_menu_item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="left"
-                android:text="@string/txt_by_train"
-                foo:customFont="arial.ttf" />
+                android:text="@string/txt_by_train" />
 
-            <com.assignment.custom_components.TextViewPlus
+            <TextView
                 android:id="@+id/txt_by_train_val"
                 style="@style/sliding_menu_item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="left"
-                foo:customFont="arial.ttf" />
+                android:gravity="left" />
         </LinearLayout>
 
-        <com.assignment.custom_components.ButtonWithFont
+        <Button
             android:id="@+id/btn_navigate"
             style="@style/ButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:padding="10dp"
-            android:text="@string/navigate"
-            foo:customFont="arial.ttf" />
+            android:text="@string/navigate" />
     </LinearLayout>
 
 </LinearLayout>

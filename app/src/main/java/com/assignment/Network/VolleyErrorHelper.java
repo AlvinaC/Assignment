@@ -1,4 +1,4 @@
-package com.assignment.Network;
+package com.assignment.network;
 
 import android.content.Context;
 
