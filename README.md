@@ -4,7 +4,7 @@ The project targets the following:
 
 Scenario 1
 
-![ScreenShot](https://raw.githubusercontent.com/AlvinaC/Assignment/screenshot/screenshot_scenario1.png)
+![ScreenShot](https://raw.githubusercontent.com/AlvinaC/Assignment/master/screenshot/screenshot_scenario1.png)
 
 1)  Mark five items with the same width to scroll horizontally
 2)  Make a viewpager of four fragments. Each fragment should be clickable and should display Fragment Number in Toast
@@ -16,7 +16,7 @@ On clicking any button, the background of Point 5space should change as per butt
 
 Scenario 2
 
-![ScreenShot](https://raw.githubusercontent.com/AlvinaC/Assignment/screenshot/screenshot_scenario2.png)
+![ScreenShot](https://raw.githubusercontent.com/AlvinaC/Assignment/master/screenshot/screenshot_scenario2.png)
 
 1)  Create a dropdown/spinner. Name is be fetched from JSON
 2)  From JSON you will find transport information. Display transport info of relevant item selected from spinner
